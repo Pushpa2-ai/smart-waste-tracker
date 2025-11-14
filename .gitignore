@@ -1,0 +1,117 @@
+# ============================
+#  PYTHON / DJANGO
+# ============================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff
+*.log
+db.sqlite3
+db.sqlite3-journal
+
+# Environment variables
+.env
+*.env
+.env.local
+.env.*.local
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+pythonenv/
+
+# Django static/media
+staticfiles/
+media/
+static/
+build/
+dist/
+
+
+# ============================
+#  NODE / REACT
+# ============================
+
+# Dependencies
+node_modules/
+
+# Production build
+/build
+/dist
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment files
+*.local
+
+# Editor files
+/.vscode
+/.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# React environment
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# ============================
+#  SYSTEM FILES
+# ============================
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# Python virtualenv for backend
+backend/venv/
+backend/.venv/
+
+# Python cache in backend
+backend/**/__pycache__/
+backend/**/*.pyc
+
+
+# ============================
+#  AI / ML MODEL FILES
+# ============================
+
+# Model weights or pickles
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+models/
+checkpoints/
+
+
+# ============================
+#  MISC
+# ============================
+
+# Backup files
+*.bak
+*.tmp
+
+# pytest cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter notebooks
+.ipynb_checkpoints
