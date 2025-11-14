@@ -9,10 +9,15 @@ Built using React + Tailwind (Frontend) and Django REST Framework + AI/ML (Backe
 🌟 ✨ Key Features
 
 ✅ 1. Live GPS Tracking (Real-Time Map)
+
 Shows current location of garbage trucks in real time
+
 Detects user’s GPS and centers the map on user's city
+
 Uses a green-themed custom animated map
+
 Smooth live markers & animated truck movement
+
 Powered by Leaflet + Django API
 
 ✅ 2. AI-Based Punctual Disposal Prediction
