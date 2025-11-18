@@ -141,25 +141,6 @@ NPM
 
 Python Virtual Environment
 
-📂 Project Structure
-SmartWaste/
-│
-├── backend/
-│   ├── smartwaste_backend/
-│   ├── waste/
-│   ├── manage.py
-│   └── gps_updater.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── assets/
-│   │   └── App.jsx
-│   └── package.json
-│
-└── README.md
-
 📥 How to Clone & Run the Project
 🖥️ 1. Clone the Repository
 git clone https://github.com/Pushpa2-ai/smart-waste-tracker.git
