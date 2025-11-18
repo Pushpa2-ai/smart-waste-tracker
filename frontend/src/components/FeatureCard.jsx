@@ -1,4 +1,3 @@
-// src/components/FeatureCard.jsx
 import React from "react";
 
 export default function FeatureCard({ icon, title, desc, tag, onClick }) {
