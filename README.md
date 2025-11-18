@@ -210,3 +210,15 @@ Alerts	Real-time anomaly detection
 📄 License
 
 MIT License — Free to use and improve.
+
+🤝 Contributing
+
+Feel free to fork this repo, submit pull requests or open issues.
+
+🙌 Author
+
+Pushpa Kumari
+
+👩‍💻 B.Tech (CSE) | Full-Stack Developer
+
+🔥 Passionate about building clean UI and scalable backend systems.
