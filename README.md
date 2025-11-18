@@ -142,38 +142,59 @@ NPM
 Python Virtual Environment
 
 📥 How to Clone & Run the Project
+
 🖥️ 1. Clone the Repository
+
 git clone https://github.com/Pushpa2-ai/smart-waste-tracker.git
+
 cd smart-waste-tracker
 
 🛠️ Backend Setup
+
 cd backend
+
 python -m venv venv
+
 venv\Scripts\activate     # Windows
+
 pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py runserver
 
 
 Backend will run on:
+
 👉 http://127.0.0.1:8000
 
 🎨 Frontend Setup
+
 cd frontend
+
 npm install
+
 npm run dev
 
 
 Frontend will run on:
+
 👉 http://localhost:5173
 
 🧠 AI & ML Inside SmartWaste
+
 Feature	AI / ML Logic Used
+
 Punctual Disposal	AI prediction + probability scoring
+
 Suggest Time	ML + rule-based optimization
+
 Driver Conduct	Behavioral scoring model
+
 Route Optimization	Heuristic-based path simulation
+
 Alerts	Real-time anomaly detection
+
 🚀 Future Enhancements
 
 🧠 Deep-learning based route prediction
