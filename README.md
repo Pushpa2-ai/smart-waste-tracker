@@ -3,9 +3,7 @@
 SmartWaste is an AI-driven waste management system designed to help municipalities, housing societies, and smart cities monitor waste trucks, predict delays, optimize routes, and ensure efficient garbage collection.
 Built using React + Tailwind (Frontend) and Django REST Framework + AI/ML (Backend), the system provides real-time tracking, AI predictions, and smart alerts.
 📽️ Dashboard Demo
-<video src="https://github.com/frontend/src/assets/system-demo.mp4" controls autoplay loop muted width="100%">
-  Your browser does not support the video tag.
-</video>
+![Dashboard Demo](frontend/src/assets/demo.gif)
 
 
 🌟 ✨ Key Features
