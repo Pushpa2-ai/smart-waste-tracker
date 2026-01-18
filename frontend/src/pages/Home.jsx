@@ -1,18 +1,17 @@
-// src/pages/Home.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Components (make sure these paths match your structure)
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8000/api";
+
 import LiveMap from "../components/LiveMap";
 import FeatureCard from "../components/FeatureCard";
 import DriverConduct from "../components/DriverConduct";
 import PunctualDisposal from "../components/PunctualDisposal";
 import ReminderToggle from "../components/ReminderToggle";
 import LocationAlerts from "../components/LocationAlerts";
+import ComplaintForm from "../components/ComplaintForm";
 
-const API_BASE = "http://127.0.0.1:8000/api";
 
-// Simple emoji icons (you can swap with SVGs later)
 const IconDriver = () => <span>🧑‍✈️</span>;
 const IconTrash = () => <span>🗑️</span>;
 const IconAlert = () => <span>🚨</span>;
@@ -25,8 +24,6 @@ export default function Home() {
   // Slide-in panel state
   const [openPanel, setOpenPanel] = useState(null);
 
-  // Report Issue form state
-  const [issueData, setIssueData] = useState({ title: "", description: "" });
 
   // Schedule + AI suggestion
   const [scheduledText, setScheduledText] = useState("Wed 8:30 AM");
@@ -42,27 +39,6 @@ export default function Home() {
   };
   const closePanel = () => setOpenPanel(null);
 
-  // Report Issue form change/submit
-  const handleChange = (e) =>
-    setIssueData({ ...issueData, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch(`${API_BASE}/report-issue/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(issueData),
-      });
-      if (!res.ok) throw new Error("Failed");
-      alert("Issue reported successfully!");
-      setIssueData({ title: "", description: "" });
-      closePanel();
-    } catch (err) {
-      alert("Failed to send issue. Please try again.");
-      console.error(err);
-    }
-  };
 
   // AI: Suggest Time flow
   const suggestTime = async () => {
@@ -128,44 +104,7 @@ export default function Home() {
           </>
         );
       case "Report Issue":
-        return (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Title
-              </label>
-              <input
-                type="text"
-                name="title"
-                value={issueData.title}
-                onChange={handleChange}
-                placeholder="e.g. Missed pickup at Sector 5"
-                className="mt-1 w-full border rounded-md p-2"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Description
-              </label>
-              <textarea
-                name="description"
-                value={issueData.description}
-                onChange={handleChange}
-                rows="4"
-                placeholder="Describe the issue in detail..."
-                className="mt-1 w-full border rounded-md p-2"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-green-100 text-black py-2 rounded-md font-semibold hover:opacity-90"
-            >
-              Submit Report
-            </button>
-          </form>
-        );
+        return <ComplaintForm />;
       default:
         return null;
     }

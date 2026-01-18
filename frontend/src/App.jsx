@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
 import MapPage from "./pages/MapPage";
-import RouteOptimizer from "./components/RouteOptimizer"; // <-- ensure file exists
+import Reports from "./pages/Reports";
+import RouteOptimizer from "./components/RouteOptimizer"; 
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/optimize" element={<RouteOptimizer />} /> {/* <-- added */}
           <Route path="/about" element={<About />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/reports" element={<Reports />} />
         </Routes>
       </main>
     </div>

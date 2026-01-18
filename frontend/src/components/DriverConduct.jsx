@@ -1,26 +1,55 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import api from "../services/api";
 
 export default function DriverConduct() {
   const [drivers, setDrivers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchDrivers = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      // Proper API call
+      const data = await api.getDriverConduct();
+
+      // Supports paginated + non-paginated response
+      const results = data?.results || data || [];
+      setDrivers(results);
+    } catch (err) {
+      console.error("Driver conduct fetch failed:", err);
+      setError("Failed to load driver performance data.");
+      setDrivers([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/driver-conduct/")
-      .then((res) => res.json())
-      .then((data) => {
-        setDrivers(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching driver conduct:", err);
-        setLoading(false);
-      });
+    fetchDrivers();
   }, []);
 
-  if (loading) return <p>Loading driver performance...</p>;
+  if (loading)
+    return (
+      <p className="text-sm text-gray-500">
+        Loading driver performance...
+      </p>
+    );
 
-  if (drivers.length === 0)
-    return <p className="text-gray-500 text-sm">No driver data available 🚛</p>;
+  if (error)
+    return (
+      <p className="text-sm text-red-600">
+        {error}
+      </p>
+    );
+
+  if (!drivers.length)
+    return (
+      <p className="text-sm text-gray-500">
+        No driver data available 🚛
+      </p>
+    );
 
   return (
     <div className="space-y-3">
@@ -31,8 +60,16 @@ export default function DriverConduct() {
         >
           <div className="flex justify-between">
             <h3 className="font-semibold text-gray-800">
-              {d.driver_name} <span className="text-gray-400 text-sm">({d.truck.truck_id})</span>
+              {d.driver_name || "Unknown Driver"}{" "}
+              <span className="text-gray-400 text-sm">
+                (
+                {typeof d.truck === "object"
+                  ? d.truck?.truck_id
+                  : d.truck || "N/A"}
+                )
+              </span>
             </h3>
+
             <span
               className={`font-semibold ${
                 d.overall_score > 80
@@ -42,19 +79,30 @@ export default function DriverConduct() {
                   : "text-red-600"
               }`}
             >
-              {d.overall_score.toFixed(1)}%
+              {Number(d.overall_score || 0).toFixed(1)}%
             </span>
           </div>
 
           <div className="mt-2 grid grid-cols-3 text-sm text-gray-600">
             <div>
-              <span className="font-medium text-gray-700">Punctuality:</span> {d.punctuality_score.toFixed(1)}%
+              <span className="font-medium text-gray-700">
+                Punctuality:
+              </span>{" "}
+              {Number(d.punctuality_score || 0).toFixed(1)}%
             </div>
+
             <div>
-              <span className="font-medium text-gray-700">Route:</span> {d.route_adherence_score.toFixed(1)}%
+              <span className="font-medium text-gray-700">
+                Route:
+              </span>{" "}
+              {Number(d.route_adherence_score || 0).toFixed(1)}%
             </div>
+
             <div>
-              <span className="font-medium text-gray-700">Stops:</span> {d.stop_behavior_score.toFixed(1)}%
+              <span className="font-medium text-gray-700">
+                Stops:
+              </span>{" "}
+              {Number(d.stop_behavior_score || 0).toFixed(1)}%
             </div>
           </div>
         </div>

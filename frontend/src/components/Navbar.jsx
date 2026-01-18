@@ -34,6 +34,14 @@ export default function Navbar() {
           >
             Settings
           </Link>
+
+          <Link
+           to="/reports"
+           className="text-gray-700 hover:text-green-700 font-medium transition no-underline"
+           >
+            Reports
+            </Link>
+
         </div>
       </div>
     </nav>

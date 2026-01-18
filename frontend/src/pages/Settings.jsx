@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiMail, FiBell } from 'react-icons/fi';
 
 export default function Settings() {
-  const [email, setEmail] = useState('pushpa@example.com');
+  const [email, setEmail] = useState('username@example.com');
   const [smartReminders, setSmartReminders] = useState(true);
 
   const handleSave = () => {
