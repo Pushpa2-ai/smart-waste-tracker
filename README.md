@@ -157,31 +157,32 @@ smartwaste/
 
 📄 Reports
 
-Method	  Endpoint                        	Description
-
-GET	     /api/reports/	                    List reports (pagination + filters)
-
-POST	   /api/reports/	                    Create new report
-
-PATCH 	 /api/reports/{id}/update_status/	  Update report status
-
-POST	   /api/reports/simulate/	            Trigger AI demo simulation
+```text
+| Method | Endpoint                        | Description                     |
+|--------|---------------------------------|---------------------------------|
+| GET    | /api/reports/                   | List reports (pagination + filters) |
+| POST   | /api/reports/                   | Create new report               |
+| PATCH  | /api/reports/{id}/update_status/| Update report status            |
+| POST   | /api/reports/simulate/          | Trigger AI demo simulation      |
+```
 
 🚮 Disposal
 
-Method	 Endpoint	                      Description
-
-GET	     /api/disposals/               	List disposal records
-
-GET	     /api/disposals/latest/         Latest disposal
-
-GET      /api/disposals/{id}/predict/	  AI delay prediction
+```text
+| Method | Endpoint                        | Description              |
+|--------|---------------------------------|--------------------------|
+| GET    | /api/disposals/                 | List disposal records    |
+| GET    | /api/disposals/latest/          | Latest disposal          |
+| GET    | /api/disposals/{id}/predict/    | AI delay prediction      |
+```
 
 🧠 Optimization
 
-Method	 Endpoint	             Description
-
-POST	  /api/optimize-route/	 AI route optimization
+```text
+| Method | Endpoint              | Description             |
+|--------|-----------------------|-------------------------|
+| POST   | /api/optimize-route/  | AI route optimization   |
+```
 
 ⚙️ Environment Setup
 
