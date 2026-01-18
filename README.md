@@ -1,82 +1,82 @@
 🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker
+<p align="center"> <img src="frontend/src/assets/demo.gif" width="800" /> </p>
 
-SmartWaste is an AI-driven waste management system designed to help municipalities, housing societies, and smart cities monitor waste trucks, predict delays, optimize routes, and ensure efficient garbage collection.
-Built using React + Tailwind (Frontend) and Django REST Framework + AI/ML (Backend), the system provides real-time tracking, AI predictions, and smart alerts.
-📽️ Dashboard Demo
-<video src="https://github.com/frontend/src/assets/system-demo.mp4" controls autoplay loop muted width="100%">
-  Your browser does not support the video tag.
-</video>
+SmartWaste is an intelligent waste-management platform built to help smart cities, municipalities, and residential societies track garbage trucks, predict delays, optimize routes, and ensure fast & efficient waste disposal.
 
+This project is built using React + Tailwind CSS (Frontend) and Django REST Framework + AI/ML (Backend), featuring real-time tracking, AI predictions, anomaly alerts, and smart routing.
 
 🌟 ✨ Key Features
-
 ✅ 1. Live GPS Tracking (Real-Time Map)
 
-Shows current location of garbage trucks in real time
+Shows live location of garbage trucks
 
-Detects user’s GPS and centers the map on user's city
+Auto-centers to the user's GPS location
 
-Uses a green-themed custom animated map
+Beautiful green-themed animated map
 
-Smooth live markers & animated truck movement
+Smooth truck movement (real + simulated)
 
 Powered by Leaflet + Django API
 
 ✅ 2. AI-Based Punctual Disposal Prediction
 
-AI model predicts whether a truck will arrive on time, slightly delayed, or delayed
+AI model predicts:
 
-Suggests optimal reminder time based on:
+On-Time
+
+Slight Delay
+
+Delayed
+
+Suggests optimal reminder time using:
 
 Historical disposal timings
 
-Traffic pattern simulation
+Traffic simulation
 
-Weather (optional future integration)
+ML scoring
 
-Users get smart suggestions like:
+Example:
 
 “Recommended Reminder: 8:12 AM (AI Optimized)”
 
 ✅ 3. Driver Conduct Monitoring
 
-Tracks driver punctuality, route adherence, and stop duration
+Punctuality score
 
-Automatically generates driver behavior scores
+Route adherence
 
-Trend-based scoring using a light ML algorithm
+Stop-duration behavior
 
-Helps ensure safe & efficient operations
+Auto-generated behavior score using ML-style logic
 
-✅ 4. Location Alerts (Emergency / Delay Detection)
+Shows per-driver performance card
 
-Detects trucks that have not updated their GPS for more than 1 minute
+✅ 4. Location Alerts (Emergency / Issue Detection)
 
-Raises automatic alerts:
+Detects trucks inactive for over 60 seconds
 
-“Truck TRUCK-202 inactive for over 60 seconds”
+Real-time alert cards:
 
-Real-time anomaly detection
+“Truck TRUCK-202 inactive for over 60 seconds 🚨”
 
-Perfect for monitoring breakdowns or long halts
+Useful for breakdown, fuel stops, or anomalies
 
 ✅ 5. AI Route Optimization (Smart Routing)
 
-Suggests optimized routes for waste collection
+AI-assisted route ordering
 
-Uses heuristics + randomness to simulate real optimization
+Reports:
 
-Shows:
-
-New optimized sector order
+Optimized sector sequence
 
 Time saved
 
-Efficiency gained
+Efficiency gain
 
-Fully integrated frontend + backend
+Fully integrated frontend input → backend output
 
-✅ 6. Report Issue Module
+✅ 6. Issue Reporting Module
 
 Users can report issues such as:
 
@@ -84,22 +84,23 @@ Missed pickups
 
 Overflowing bins
 
-Driver behavior issues
+Driver misconduct
 
-Reports are stored in the backend for admin review.
+Backend stores all reports for admin review.
 
-✅ 7. Dynamic Dashboard
+✅ 7. Modern Dynamic Dashboard
 
-Clean UI with soft green theme (green-100)
+Smooth animations
 
-React-based side panel for each feature
+Sliding side-panels
 
-Smooth animations and modern card styling
+Soft green UI theme (green-100)
 
-Mobile friendly
+Clean professional card styling
+
+Mobile responsive
 
 🏗️ Tech Stack
-
 🎨 Frontend
 
 React.js
@@ -118,59 +119,43 @@ Django REST Framework
 
 SQLite3
 
-Python AI/ML logic
+AI/ML (Python logic + heuristics)
 
-🗺 Live Map
+🗺️ Live Map Engine
 
-Leaflet.js + OpenStreetMap
+Leaflet.js
 
-Custom animated green theme
+OpenStreetMap
 
-User GPS integration
+Custom animated map style
+
+GPS auto-detection
 
 ⚙️ Other Tools
 
-Postman for API testing
+Postman
 
 Git & GitHub
 
-NPM + Python venv
+NPM
 
-📂 Project Structure
-
-SmartWaste/
-│
-├── backend/
-│   ├── smartwaste_backend/
-│   ├── waste/
-│   ├── manage.py
-│   └── gps_updater.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── assets/
-│   │   └── App.jsx
-│   └── package.json
-│
-└── README.md
+Python Virtual Environment
 
 📥 How to Clone & Run the Project
 
-1️⃣ Clone the Repository
+🖥️ 1. Clone the Repository
 
-git clone https://github.com/Pushpa2-ai/smartwaste.git
+git clone https://github.com/Pushpa2-ai/smart-waste-tracker.git
 
-cd smartwaste
+cd smart-waste-tracker
 
-📌 Backend Setup
+🛠️ Backend Setup
 
 cd backend
 
 python -m venv venv
 
-venv\Scripts\activate
+venv\Scripts\activate     # Windows
 
 pip install -r requirements.txt
 
@@ -178,20 +163,62 @@ python manage.py migrate
 
 python manage.py runserver
 
-📌 Frontend Setup
+
+Backend will run on:
+
+👉 http://127.0.0.1:8000
+
+🎨 Frontend Setup
 
 cd frontend
 
 npm install
 
-npm start
+npm run dev
+
+
+Frontend will run on:
+
+👉 http://localhost:5173
 
 🧠 AI & ML Inside SmartWaste
 
-Feature	AI/ML Used
+Feature	AI / ML Logic Used
 
-Punctual Disposal	AI prediction + ML-based probability scoring
-Suggest Time	ML + rule-based model
+Punctual Disposal	AI prediction + probability scoring
+
+Suggest Time	ML + rule-based optimization
+
 Driver Conduct	Behavioral scoring model
+
 Route Optimization	Heuristic-based path simulation
-Alerts	Anomaly detection  
+
+Alerts	Real-time anomaly detection
+
+🚀 Future Enhancements
+
+🧠 Deep-learning based route prediction
+
+📡 Real hardware-based IoT bin sensors
+
+📊 Admin analytics dashboard
+
+🌤 Weather API integration
+
+🚛 Optimization using OR-Tools
+
+📄 License
+
+MIT License — Free to use and improve.
+
+🤝 Contributing
+
+Feel free to fork this repo, submit pull requests or open issues.
+
+🙌 Author
+
+Pushpa Kumari
+
+👩‍💻 B.Tech (CSE-AIDS) | Full-Stack Developer
+
+🔥 Passionate about building clean UI and scalable backend systems.
