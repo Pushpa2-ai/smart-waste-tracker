@@ -1,113 +1,106 @@
 🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker
 <p align="center"> <img src="frontend/src/assets/demo.gif" width="800" /> </p>
 
-SmartWaste is an intelligent waste-management platform built to help smart cities, municipalities, and residential societies track garbage trucks, predict delays, optimize routes, and ensure fast & efficient waste disposal.
+SmartWaste is a full-stack, AI-enhanced waste management platform designed to track garbage collection, monitor driver behavior, optimize collection routes, and allow residents to report issues in real-time.
+It simulates a real-world smart city waste ecosystem using modern web technologies and cloud-ready architecture.
 
-This project is built using React + Tailwind CSS (Frontend) and Django REST Framework + AI/ML (Backend), featuring real-time tracking, AI predictions, anomaly alerts, and smart routing.
+This project demonstrates production-grade system design, REST API integration, AI simulation workflows, and frontend-backend deployment readiness.
 
-🌟 ✨ Key Features
-✅ 1. Live GPS Tracking (Real-Time Map)
+🚀 Key Features
 
-Shows live location of garbage trucks
+🗺️ Live GPS Tracking
 
-Auto-centers to the user's GPS location
+Displays real-time truck locations on an interactive map
 
-Beautiful green-themed animated map
+Simulates geolocation-based movement and updates
 
-Smooth truck movement (real + simulated)
+Detects inactive trucks and triggers alerts
 
-Powered by Leaflet + Django API
+🧑‍✈️ Driver Conduct Monitoring
 
-✅ 2. AI-Based Punctual Disposal Prediction
+Tracks driver punctuality, route adherence, and stop behavior
 
-AI model predicts:
+Calculates overall performance score dynamically
 
-On-Time
+Ranks drivers based on efficiency and safety metrics
 
-Slight Delay
+🧠 AI Route Optimization
 
-Delayed
+Accepts a list of sectors and truck ID
 
-Suggests optimal reminder time using:
+Simulates AI-based optimized route generation
 
-Historical disposal timings
+Calculates time saved and efficiency gain
 
-Traffic simulation
+⏱️ Punctual Disposal Prediction
 
-ML scoring
+Uses AI logic to predict delays in garbage collection
 
-Example:
+Displays confidence score for predictions
 
-“Recommended Reminder: 8:12 AM (AI Optimized)”
+Helps residents prepare for schedule changes
 
-✅ 3. Driver Conduct Monitoring
+📢 Reports & Complaint Management
 
-Punctuality score
+📝 Report Dashboard
 
-Route adherence
+View all reported issues in a clean, paginated table
 
-Stop-duration behavior
+Filter reports by:
 
-Auto-generated behavior score using ML-style logic
+Status (Pending, In Progress, Resolved)
 
-Shows per-driver performance card
+Issue Type (Overflow, Missed Pickup, Illegal Dumping, Other)
 
-✅ 4. Location Alerts (Emergency / Issue Detection)
+Server-side pagination for scalability
 
-Detects trucks inactive for over 60 seconds
+🔄 Live Status Updates
 
-Real-time alert cards:
+Update report status directly from the UI
 
-“Truck TRUCK-202 inactive for over 60 seconds 🚨”
+Changes persist in the backend via REST API
 
-Useful for breakdown, fuel stops, or anomalies
+Reflects real-world municipal workflow simulation
 
-✅ 5. AI Route Optimization (Smart Routing)
+🤖 AI Demo / Simulation Mode
 
-AI-assisted route ordering
+Auto-generates fake reports in real time
 
-Reports:
+Randomly progresses old reports through lifecycle:
 
-Optimized sector sequence
+Pending → In Progress → Resolved
 
-Time saved
+Runs on a timed backend simulation engine
 
-Efficiency gain
+Designed for live demos and recruiter walkthroughs
 
-Fully integrated frontend input → backend output
+🏗️ System Architecture
 
-✅ 6. Issue Reporting Module
+```text
 
-Users can report issues such as:
+Frontend (React + Vite + Tailwind)
+        |
+        | REST API (JSON)
+        |
+Backend (Django + Django REST Framework)
+        |
+Database (SQLite / PostgreSQL - Cloud Ready)
 
-Missed pickups
-
-Overflowing bins
-
-Driver misconduct
-
-Backend stores all reports for admin review.
-
-✅ 7. Modern Dynamic Dashboard
-
-Smooth animations
-
-Sliding side-panels
-
-Soft green UI theme (green-100)
-
-Clean professional card styling
-
-Mobile responsive
+```
 
 🏗️ Tech Stack
+
 🎨 Frontend
 
-React.js
+React (Vite)
 
 Tailwind CSS
 
 React Router
+
+Fetch API
+
+Modular Component Architecture
 
 Leaflet.js
 
@@ -117,9 +110,116 @@ Django
 
 Django REST Framework
 
+Django Filters
+
+Pagination (PageNumberPagination)
+
+AI Simulation Engine (Python Logic Layer)
+
 SQLite3
 
 AI/ML (Python logic + heuristics)
+
+⚙️ DevOps & Deployment
+
+GitHub (Version Control)
+
+Render (Backend Hosting)
+
+Vercel (Frontend Hosting)
+
+Environment-Based API Routing
+
+📂 Project Structure
+
+```text
+smartwaste/
+│
+├── backend/
+│   ├── smartwaste_backend/
+│   ├── waste/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   └── ai_model.py
+│   └── manage.py
+│
+└── frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── services/api.js
+    │   └── App.jsx
+    └── vite.config.js
+```
+🔌 API Endpoints
+
+📄 Reports
+
+Method	  Endpoint                        	Description
+
+GET	     /api/reports/	                    List reports (pagination + filters)
+
+POST	   /api/reports/	                    Create new report
+
+PATCH 	 /api/reports/{id}/update_status/	  Update report status
+
+POST	   /api/reports/simulate/	            Trigger AI demo simulation
+
+🚮 Disposal
+
+Method	 Endpoint	                      Description
+
+GET	     /api/disposals/               	List disposal records
+
+GET	     /api/disposals/latest/         Latest disposal
+
+GET      /api/disposals/{id}/predict/	  AI delay prediction
+
+🧠 Optimization
+
+Method	 Endpoint	             Description
+
+POST	  /api/optimize-route/	 AI route optimization
+
+⚙️ Environment Setup
+
+🛠 Backend
+
+cd backend
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
+
+🎨 Frontend
+
+cd frontend
+
+npm install
+
+npm run dev
+
+🌐 Deployment (Production Ready)
+
+Backend
+
+Hosted on Render
+
+Gunicorn + Whitenoise
+
+Cloud Database Support (PostgreSQL)
+
+Frontend
+
+Hosted on Vercel
+
+Environment-based API routing:
+
+VITE_API_BASE=https://your-backend-url.onrender.com/api
 
 🗺️ Live Map Engine
 
