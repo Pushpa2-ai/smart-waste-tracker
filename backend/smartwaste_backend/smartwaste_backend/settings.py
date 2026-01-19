@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'smartwaste_backend.waste.apps.WasteapiConfig',
-    'smartwaste_backend.users.apps.UsersConfig',
+    'waste.apps.WasteapiConfig',
+    'users.apps.UsersConfig',
     'django_filters',
 ]
 
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'smartwaste_backend.smartwaste_backend.urls'
+ROOT_URLCONF = 'smartwaste_backend.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
