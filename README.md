@@ -1,16 +1,15 @@
-🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker
+🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker (Production-Ready & Cloud-Deployed)
 <p align="center"> <img src="frontend/src/assets/demo.gif" width="800" /> </p>
 
-SmartWaste is a full-stack, AI-enhanced waste management platform designed to track garbage collection, monitor driver behavior, optimize collection routes, and allow residents to report issues in real-time.
-It simulates a real-world smart city waste ecosystem using modern web technologies and cloud-ready architecture.
+SmartWaste is a production-ready, full-stack, AI-enhanced smart city platform designed to digitize and optimize municipal waste operations at scale — enabling real-time (simulated) tracking, intelligent route planning, and citizen-driven issue reporting through a cloud-deployed architecture.
 
-This project demonstrates production-grade system design, REST API integration, AI simulation workflows, and frontend-backend deployment readiness.
+This project demonstrates production-grade system design, REST API integration, AI-driven simulation workflows, cloud deployment workflows, and frontend-backend scalability patterns used in modern SaaS platforms.
 
 🚀 Key Features
 
 🗺️ Live GPS Tracking
 
-Displays real-time truck locations on an interactive map
+Displays real-time (simulated) truck locations on an interactive map
 
 Simulates geolocation-based movement and updates
 
@@ -20,7 +19,7 @@ Detects inactive trucks and triggers alerts
 
 Tracks driver punctuality, route adherence, and stop behavior
 
-Calculates overall performance score dynamically
+Calculates overall performance score dynamically using weighted scoring logic and backend-driven metrics
 
 Ranks drivers based on efficiency and safety metrics
 
@@ -28,13 +27,13 @@ Ranks drivers based on efficiency and safety metrics
 
 Accepts a list of sectors and truck ID
 
-Simulates AI-based optimized route generation
+Uses heuristic-based optimization algorithms to simulate intelligent route planning and measure efficiency gains
 
 Calculates time saved and efficiency gain
 
 ⏱️ Punctual Disposal Prediction
 
-Uses AI logic to predict delays in garbage collection
+Uses probabilistic scoring and rule-based prediction logic to estimate delays in garbage collection
 
 Displays confidence score for predictions
 
@@ -76,6 +75,8 @@ Designed for live demos and recruiter walkthroughs
 
 🏗️ System Architecture
 
+Deployed on cloud infrastructure with environment-based configuration and CORS-secured API access
+
 ```text
 
 Frontend (React + Vite + Tailwind)
@@ -84,7 +85,7 @@ Frontend (React + Vite + Tailwind)
         |
 Backend (Django + Django REST Framework)
         |
-Database (SQLite / PostgreSQL - Cloud Ready)
+Database (PostgreSQL - Cloud Ready)
 
 ```
 
@@ -114,11 +115,9 @@ Django Filters
 
 Pagination (PageNumberPagination)
 
-AI Simulation Engine (Python Logic Layer)
+PostgreSQL
 
-SQLite3
-
-AI (Python logic + heuristics)
+AI Simulation & Heuristic Engine (Python)
 
 ⚙️ DevOps & Deployment
 
@@ -137,23 +136,39 @@ smartwaste/
 │
 ├── backend/
 │   ├── smartwaste_backend/
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   │
 │   ├── waste/
 │   │   ├── models.py
 │   │   ├── serializers.py
 │   │   ├── views.py
 │   │   ├── urls.py
 │   │   └── ai_model.py
+│   │
+│   ├── requirements.txt
+│   ├── .env.example
 │   └── manage.py
 │
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   ├── services/api.js
-    │   └── App.jsx
-    └── vite.config.js
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── .env
+│   │   └── App.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .gitignore
+└── README.md
 ```
 🔌 API Endpoints
+
+All endpoints are protected with CORS policies and environment-based base URLs for production and development
 
 📄 Reports
 
@@ -185,6 +200,16 @@ smartwaste/
 ```
 
 ⚙️ Environment Setup
+
+.env
+
+Create a .env file in backend:
+
+SECRET_KEY=your_secret
+
+DEBUG=False
+
+DATABASE_URL=your_db_url
 
 🛠 Backend
 
@@ -284,7 +309,7 @@ Frontend will run on:
 
 🧠 AI & ML Inside SmartWaste
 
-Feature	AI / ML Logic Used
+Implementation Approach
 
 Punctual Disposal	AI prediction + probability scoring
 
@@ -297,6 +322,8 @@ Route Optimization	Heuristic-based path simulation
 Alerts	Real-time anomaly detection
 
 🚀 Future Enhancements
+
+Designed to transition from simulation-based intelligence to production-grade ML pipelines
 
 🧠 Deep-learning based route prediction
 
@@ -320,6 +347,6 @@ Feel free to fork this repo, submit pull requests or open issues.
 
 Pushpa Kumari
 
-👩‍💻 B.Tech (CSE-AIDS) | Full-Stack Developer
+👩‍💻 B.Tech (CSE-AIDS) | Full-Stack Developer(React & Django)
 
-🔥 Passionate about building clean UI and scalable backend systems.
+🔥 Focused on building cloud-deployed, API-driven applications with real-world simulation and production-style architecture.
