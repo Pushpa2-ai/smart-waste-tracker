@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'smartwaste_backend.waste',
-    'users',
+    'smartwaste_backend.waste.apps.WasteapiConfig',
+    'smartwaste_backend.users.apps.UsersConfig',
     'django_filters',
 ]
 
