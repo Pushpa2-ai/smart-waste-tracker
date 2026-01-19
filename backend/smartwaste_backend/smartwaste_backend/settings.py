@@ -64,21 +64,23 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'smartwaste_backend.urls'
 
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Vite dev server
-    "https://smart-waste-tracker-vercel.vercel.app",
-    "https://smart-waste-tracker-vercel-oa8pty805.vercel.app",
+    "http://localhost:5173",
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://smart-waste-tracker-vercel.vercel.app",
-    "https://smart-waste-tracker-vercel-oa8pty805.vercel.app"
+CSRF_TRUSTED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
 ]
 
-CORS_ALLOW_HEADERS = [
-    "content-type",
-    "authorization",
-]
+CORS_ALLOW_CREDENTIALS = True
+
+
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
