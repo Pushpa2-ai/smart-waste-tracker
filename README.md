@@ -118,7 +118,7 @@ AI Simulation Engine (Python Logic Layer)
 
 SQLite3
 
-AI/ML (Python logic + heuristics)
+AI (Python logic + heuristics)
 
 ⚙️ DevOps & Deployment
 
@@ -208,7 +208,7 @@ npm run dev
 
 Backend
 
-Hosted on Render
+Hosted on Render: https://smart-waste-tracker.onrender.com/api
 
 Gunicorn + Whitenoise
 
@@ -216,11 +216,11 @@ Cloud Database Support (PostgreSQL)
 
 Frontend
 
-Hosted on Vercel
+Hosted on Vercel: https://smart-waste-tracker-vercel-6sqasq6y1.vercel.app/
 
 Environment-based API routing:
 
-VITE_API_BASE=https://your-backend-url.onrender.com/api
+VITE_API_BASE=https://smart-waste-tracker.onrender.com/api
 
 🗺️ Live Map Engine
 
