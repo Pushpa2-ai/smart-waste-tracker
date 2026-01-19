@@ -71,6 +71,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://smart-waste-tracker-vercel.vercel.app",
     "https://smart-waste-tracker-vercel-oa8pty805.vercel.app"
 ]
 
