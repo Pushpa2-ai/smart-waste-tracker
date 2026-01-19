@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'smartwaste_backend.urls'
+ROOT_URLCONF = 'smartwaste_backend.smartwaste_backend.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
