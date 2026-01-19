@@ -67,7 +67,7 @@ ROOT_URLCONF = 'smartwaste_backend.urls'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite dev server
     "https://smart-waste-tracker-vercel.vercel.app",
-    "https://smart-waste-tracker-vercel-aw6js8kfb.vercel.app",
+    "https://smart-waste-tracker-vercel-oa8pty805.vercel.app",
 ]
 
 CORS_ALLOW_HEADERS = [
