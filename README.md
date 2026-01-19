@@ -1,7 +1,4 @@
 🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker
-```text
-🌱 SmartWaste – AI Powered Waste Management & Garbage Collection Tracker
-```
 <p align="center"> <img src="frontend/src/assets/demo.gif" width="800" /> </p>
 
 SmartWaste is a full-stack, AI-enhanced waste management platform designed to track garbage collection, monitor driver behavior, optimize collection routes, and allow residents to report issues in real-time.
