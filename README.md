@@ -5,6 +5,7 @@ SmartWaste is a production-ready, full-stack, AI-enhanced smart city platform de
 
 This project demonstrates production-grade system design, REST API integration, AI-driven simulation workflows, cloud deployment workflows, and frontend-backend scalability patterns used in modern SaaS platforms.
 
+
 🚀 Key Features
 
 🗺️ Live GPS Tracking
@@ -38,6 +39,7 @@ Uses probabilistic scoring and rule-based prediction logic to estimate delays in
 Displays confidence score for predictions
 
 Helps residents prepare for schedule changes
+
 
 📢 Reports & Complaint Management
 
@@ -73,23 +75,25 @@ Runs on a timed backend simulation engine
 
 Designed for live demos and recruiter walkthroughs
 
+
 🏗️ System Architecture
 
 Deployed on cloud infrastructure with environment-based configuration and CORS-secured API access
 
 ```text
 
-Frontend (React + Vite + Tailwind)
+Frontend (React + Vite + Tailwind) - Vercel
         |
         | REST API (JSON)
         |
-Backend (Django + Django REST Framework)
+Backend (Django + Django REST Framework) - Render
         |
 Database (PostgreSQL - Cloud Ready)
 
 ```
 
 🏗️ Tech Stack
+
 
 🎨 Frontend
 
@@ -105,6 +109,7 @@ Modular Component Architecture
 
 Leaflet.js
 
+
 🧠 Backend
 
 Django
@@ -119,6 +124,7 @@ PostgreSQL
 
 AI Simulation & Heuristic Engine (Python)
 
+
 ⚙️ DevOps & Deployment
 
 GitHub (Version Control)
@@ -128,6 +134,7 @@ Render (Backend Hosting)
 Vercel (Frontend Hosting)
 
 Environment-Based API Routing
+
 
 📂 Project Structure
 
@@ -166,6 +173,7 @@ smartwaste/
 ├── .gitignore
 └── README.md
 ```
+
 🔌 API Endpoints
 
 All endpoints are protected with CORS policies and environment-based base URLs for production and development
@@ -199,6 +207,7 @@ All endpoints are protected with CORS policies and environment-based base URLs f
 | POST   | /api/optimize-route/  | AI route optimization   |
 ```
 
+
 ⚙️ Environment Setup
 
 .env
@@ -211,6 +220,7 @@ DEBUG=False
 
 DATABASE_URL=your_db_url
 
+
 🛠 Backend
 
 cd backend
@@ -221,6 +231,7 @@ python manage.py migrate
 
 python manage.py runserver
 
+
 🎨 Frontend
 
 cd frontend
@@ -228,6 +239,7 @@ cd frontend
 npm install
 
 npm run dev
+
 
 🌐 Deployment (Production Ready)
 
@@ -247,6 +259,7 @@ Environment-based API routing:
 
 VITE_API_BASE=https://smart-waste-tracker.onrender.com/api
 
+
 🗺️ Live Map Engine
 
 Leaflet.js
@@ -257,6 +270,7 @@ Custom animated map style
 
 GPS auto-detection
 
+
 ⚙️ Other Tools
 
 Postman
@@ -266,6 +280,7 @@ Git & GitHub
 NPM
 
 Python Virtual Environment
+
 
 📥 How to Clone & Run the Project
 
@@ -294,6 +309,7 @@ Backend will run on:
 
 👉 http://127.0.0.1:8000
 
+
 🎨 Frontend Setup
 
 cd frontend
@@ -302,10 +318,10 @@ npm install
 
 npm run dev
 
-
 Frontend will run on:
 
 👉 http://localhost:5173
+
 
 🧠 AI & ML Inside SmartWaste
 
@@ -321,6 +337,7 @@ Route Optimization	Heuristic-based path simulation
 
 Alerts	Real-time anomaly detection
 
+
 🚀 Future Enhancements
 
 Designed to transition from simulation-based intelligence to production-grade ML pipelines
@@ -335,18 +352,21 @@ Designed to transition from simulation-based intelligence to production-grade ML
 
 🚛 Optimization using OR-Tools
 
+
 📄 License
 
 MIT License — Free to use and improve.
+
 
 🤝 Contributing
 
 Feel free to fork this repo, submit pull requests or open issues.
 
+
 🙌 Author
 
 Pushpa Kumari
 
-👩‍💻 B.Tech (CSE-AIDS) | Full-Stack Developer(React & Django)
+👩‍💻 B.Tech (CSE-AIDS) | Full-Stack Developer (React & Django)
 
 🔥 Focused on building cloud-deployed, API-driven applications with real-world simulation and production-style architecture.
